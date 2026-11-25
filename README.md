@@ -45,8 +45,8 @@ Every prompt is in [PROMPTS.md](PROMPTS.md), word for word. The git history keep
      and left nothing running;
    - wrote the matchmaker profile instead of creating a matchmaker, as asked.
 3. **Review** (last commits, by hand): the matchmaker token moved to a git-ignored
-   `src/config.local.js`, the profile waits for a second player for 20 s before matching one alone
-   (Codex's version matched every player alone at once), CI workflows, this README.
+   `src/config.local.js`, the profile uses the same sizes as the other games on the shared
+   matchmaker (2 to 4 players, 1 after 20 s; Codex wrote 1 to 4), CI workflows, this README.
 
 Verified on Edgegap on 2026-11-25: two browser tabs clicked **Find Match** on a shared matchmaker,
 were matched onto one server in 16 seconds with two bots in the empty seats, and the server
