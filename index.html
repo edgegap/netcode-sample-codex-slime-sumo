@@ -11,7 +11,7 @@
     <main class="game-shell">
       <header class="topbar">
         <a class="brand" href="#" aria-label="Slime Sumo home"><span class="brand-mark">S</span><span>slime<span class="brand-light">sumo</span></span></a>
-        <div class="topbar-note"><span class="live-dot"></span> LOCAL ARCADE <span class="topbar-divider">/</span> 4 SLIMES</div>
+        <div id="mode-label" class="topbar-note"><span class="live-dot"></span> LOCAL ARCADE <span class="topbar-divider">/</span> 4 SLIMES</div>
         <button class="sound-button" id="sound-button" aria-label="Toggle sound" title="Toggle sound">? <span>SOUND ON</span></button>
       </header>
 
@@ -41,7 +41,9 @@
             <div class="tip-row"><span class="tip-number">02</span><span>Dash to bump<br>your rivals</span><span class="tip-icon dash-icon">»</span></div>
             <div class="tip-row"><span class="tip-number">03</span><span>Last slime<br>standing wins</span><span class="tip-icon crown">?</span></div>
           </div>
-          <button id="play-button" class="play-button"><span>LET'S PLAY</span><span class="button-arrow">?</span></button>
+          <button id="find-match-button" class="play-button online-button"><span>FIND MATCH</span><span class="button-arrow">&gt;</span></button>
+          <button id="play-button" class="play-button"><span>PLAY SOLO</span><span class="button-arrow">&gt;</span></button>
+          <div id="connection-status" class="connection-status" role="status">Solo mode / offline</div>
           <div class="bottom-hint"><span>BEST OF THE BOWL</span><span>?</span></div>
         </aside>
       </section>

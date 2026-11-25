@@ -3,7 +3,18 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
-  "dependencies": { "phaser": "^3.90.0" },
-  "devDependencies": { "vite": "^6.3.0" }
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@edgegap/sdk": "^1.1.0",
+    "phaser": "^3.90.0",
+    "ws": "^8.23.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.1",
+    "vite": "^6.3.0"
+  }
 }
