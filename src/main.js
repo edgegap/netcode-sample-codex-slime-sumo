@@ -119,7 +119,7 @@ function sendInput(dash){const s=scene(),keys=s.keys,c=s.cursors;const x=(keys.D
 
 async function findMatch(){
   const params=new URLSearchParams(location.search),mmUrl=params.get('mm')||matchmakerConfig.url,token=params.get('token')||matchmakerConfig.token;
-  if(!mmUrl||!token){hud.status.textContent='Add your matchmaker URL and client token in src/config.js';return;}
+  if(!mmUrl||!token){hud.status.textContent='Add your matchmaker URL and client token in src/config.local.js';return;}
   hud.find.disabled=false;hud.play.disabled=true;hud.find.querySelector('span:first-child').textContent='CANCEL SEARCH';hud.status.textContent='Finding a match…';queueCancelled=false;
   try{agent=new GroupAgent({baseUrl:mmUrl,authToken:token,logGroupUpdates:false});agent.initialize(undefined,({current})=>{if(current?.status)hud.status.textContent=`${current.status}…`;});await agent.createGroup({profile:'slime-sumo',attributes:{},is_ready:true},true);const assignment=await agent.nextAssignment();if(queueCancelled)return;const ticket=agent.group.current.ticket_id;agent.dispose();agent=null;await startOnline(getConnectionUrl(assignment,'gameport'),ticket);}
   catch(err){if(!queueCancelled)hud.status.textContent=err.message||'Matchmaking failed';hud.find.disabled=false;hud.find.querySelector('span:first-child').textContent='FIND MATCH';hud.play.disabled=false;}

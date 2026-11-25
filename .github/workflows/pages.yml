@@ -1,0 +1,39 @@
+# Publishes the browser game (Vite build) to GitHub Pages. The page is static: only the game
+# server runs on Edgegap. Optional and manual: run it from the Actions tab.
+# Turn Pages on once: Settings > Pages > Source: GitHub Actions.
+# Find Match on the published page takes the matchmaker from ?mm=<url>&token=<auth-token>, and the
+# page's origin (https://<owner>.github.io) must be in the matchmaker's allowed_cors_origins.
+name: Pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx vite build --base=./
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
