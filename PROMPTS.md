@@ -1,6 +1,6 @@
 # Prompts
 
-Every prompt given to Codex for this sample, in order, word for word.
+Every prompt given to Codex for this sample, in order, word for word. Values in angle brackets were the real ones in the run.
 
 Setup: Codex CLI 0.172.0, signed in with ChatGPT, default model, reasoning effort medium. Plugins: OpenAI's Game Studio (0.1.2) for step 1; the Edgegap plugin and MCP server for step 2.
 
