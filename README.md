@@ -1,5 +1,7 @@
 # How to make a multiplayer game with OpenAI Codex
 
+![Make Your Codex Game Multiplayer](docs/images/card.jpg)
+
 A worked example you can follow step by step: **Codex** builds a single-player browser game with
 OpenAI's Game Studio plugin, then, with the **Edgegap** plugin and MCP server, turns it into online
 matches: one authoritative server per match on Edgegap, bots in the empty seats, a Find Match
