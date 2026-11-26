@@ -62,11 +62,11 @@ stopped itself about 30 seconds after both tabs left.
   ```bash
   codex plugin marketplace add edgegap/llm-agent-skills
   codex plugin add edgegap@edgegap
+  codex mcp login edgegap
   ```
 
-  The Edgegap plugin connects the hosted MCP server, which reads your
-  [Edgegap API token](https://app.edgegap.com/user-settings?tab=tokens) (the UUID only) from the
-  `EDGEGAP_API_TOKEN` environment variable. The token stays out of the project.
+  The Edgegap plugin connects the hosted MCP server; `codex mcp login edgegap` opens the Edgegap
+  sign-in in your browser. No API token is needed, and nothing goes into the project.
 - An Edgegap account (app.edgegap.com). The free tier is enough: one matchmaker that stops about
   3 hours after each start, one server at a time.
 - Docker logged in to your Edgegap registry (Container Registry page), or GitHub Actions

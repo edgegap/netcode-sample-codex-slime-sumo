@@ -12,7 +12,7 @@ Use $game-studio. Make a small browser game called Slime Sumo with Phaser: a top
 
 ## Step 2: online multiplayer (Edgegap plugin and MCP server on)
 
-Codex ran with `--dangerously-bypass-approvals-and-sandbox` in this folder: on Windows the CLI's sandbox only allowed reading, and Codex stopped without editing on the first try. Before this prompt: Docker logged in to `registry.edgegap.com` with the registry login from the Edgegap dashboard, and `EDGEGAP_API_TOKEN` set in the environment Codex started from.
+Codex ran with `--dangerously-bypass-approvals-and-sandbox` in this folder: on Windows the CLI's sandbox only allowed reading, and Codex stopped without editing on the first try. Before this prompt: Docker logged in to `registry.edgegap.com` with the registry login from the Edgegap dashboard, and `EDGEGAP_API_TOKEN` set in the environment Codex started from. (Since 2026-11-26 the hosted Edgegap MCP server uses Edgegap sign-in instead: run `codex mcp login edgegap` once, no token.)
 
 ```text
 Use $edgegap-vibe-coded. Make Slime Sumo online multiplayer on Edgegap: up to 4 players per match on one authoritative server, bots take the empty seats, a Find Match button that goes through Edgegap's matchmaker, and the solo mode keeps working offline. Playtest note: when the timer reaches 00:00 the round never ends if two or more slimes are still on the platform; fix that too.
